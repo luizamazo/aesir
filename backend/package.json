@@ -1,0 +1,32 @@
+{
+  "name": "xablapi",
+  "version": "1.0.0",
+  "description": "bot pra facilitar nossa vida",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon -r esm app.js",
+    "test": "e-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizamazo/xablapi.git"
+  },
+  "keywords": [
+    "xablapi",
+    "xablot",
+    "az"
+  ],
+  "author": "luizamazo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luizamazo/xablapi/issues"
+  },
+  "homepage": "https://github.com/luizamazo/xablapi#readme",
+  "dependencies": {
+    "dotenv": "^12.0.3",
+    "esm": "^3.2.25",
+    "express": "^4.17.2",
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.6"
+  }
+}
