@@ -1,4 +1,4 @@
-import * as files from './files'
+import * as files from './files.js'
 
 export {
     files

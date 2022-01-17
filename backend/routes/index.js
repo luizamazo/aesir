@@ -1,5 +1,5 @@
 import express from 'express'
-import {scriptMakerController} from '../controllers'
+import {scriptMakerController} from '../controllers/index.js'
 
 const router = express.Router()
 

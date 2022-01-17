@@ -1,5 +1,5 @@
-import {files} from '../../utils'
-import {scriptMakerService} from '../../services'
+import {files} from '../../utils/index.js'
+import {scriptMakerService} from '../../services/index.js'
 
 export const createOriginalScript = async (req, res, next) => {
     try{
@@ -11,15 +11,15 @@ export const createOriginalScript = async (req, res, next) => {
 }
 
 export const generateScript = (req, res, next) => {
-    const {content} = req.body  
-    const {scriptDetails} = content
+    // const {content} = req.body  
+    // const {scriptDetails} = content
 
-    if(scriptDetails.system = 'Contratos'){
-        generateContratosScript(scriptDetails)
-    }else{
-        generatePatrimonioScript(scriptDetails)
-    }
-    
+    // if(scriptDetails.system = 'Contratos'){
+    //     generateContratosScript(scriptDetails)
+    // }else{
+    //     generatePatrimonioScript(scriptDetails)
+    // }   
+    console.log('req', req)
 }
 
 const generateContratosScript = (scriptDetails) => {

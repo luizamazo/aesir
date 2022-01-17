@@ -1,4 +1,4 @@
-import {scriptMakerDB} from '../db'
+import {scriptMakerDB} from '../db/index.js'
 
 export const storeOriginalScript = async (scriptDetails) => {
     try{
