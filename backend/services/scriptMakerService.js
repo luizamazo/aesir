@@ -16,11 +16,23 @@ export const storeOriginalScript = async (scriptDetails) => {
 }
 
 export const storeGeneratedScript = async (generatedScript) => {
-    try{
-        let result = await scriptMakerDB.create(generatedScript)
-        result.status = 201
-        return res.json(result)
-    }catch(e){
-        console.error(e)
-    }
+
+    let result = await scriptMakerDB.create(generatedScript)
+        .then(response => {
+            console.log('response', response)
+        }).catch(e => {
+            console.error('erro no store generated script', e)
+        })
+    result.status = 201
+    return res.json(result)
+
+}
+
+export const getOriginalScriptFromType = async (details) => {
+    return await scriptMakerDB.find({scriptType: details.scriptType})
+        .then(response => {
+            return response
+        }).catch(e => {
+            console.error('e no get original script', e)
+        })
 }

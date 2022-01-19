@@ -10,10 +10,8 @@ export const readFile = async (path) => {
 }
 
 export const writeFile = async (path, content) => {
-    try{
-        fs.write(path, content, 'utf8')
+    fs.writeFile(path, content, err => { 
+        if (err) throw err
         console.log(`Arquivo ${path} escrito com sucesso`)
-    }catch(e){
-        console.log(e)
-    }
+    })
 }
