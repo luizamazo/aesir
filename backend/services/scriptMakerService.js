@@ -7,7 +7,6 @@ export const storeOriginalScript = async (scriptDetails) => {
         {scriptType} = scriptDetails,
         {script} = scriptDetails
         result = await scriptMakerDB.create(scriptDetails)
-        console.log('result', result);
         result.status = 201
         return result
     }catch(e){
