@@ -9,6 +9,10 @@ const ScriptMakerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    database: {
+        type: String,
+        required: true
+    },
     script: {
         type: Object,
         required: true
