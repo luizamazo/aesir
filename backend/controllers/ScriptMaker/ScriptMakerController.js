@@ -11,6 +11,16 @@ export const createOriginalScript = async (req, res, next) => {
     }
 }
 
+export const updateOriginalScript = async (req, res) => {
+    try {
+        const originalScriptId = req.param("id");
+        let result = await scriptMakerService.updateOriginalScript(originalScriptId, req.body);
+        res.json(result);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 export const generateScript = async (req, res, next) => {
     const scriptDetails = req.body 
     if(scriptDetails.system == 'Contratos'){

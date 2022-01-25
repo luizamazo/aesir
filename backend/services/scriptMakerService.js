@@ -14,6 +14,17 @@ export const storeOriginalScript = async (scriptDetails) => {
     }
 }
 
+export const updateOriginalScript = async (originalScriptId, scriptDetails) => {
+    try {
+        let result = {};
+        result = await scriptMakerDB.findByIdAndUpdate(originalScriptId, scriptDetails);
+        result.status = 200;
+        return result;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 export const storeGeneratedScript = async (generatedScript) => {
 
     let result = await scriptMakerDB.create(generatedScript)
