@@ -11,6 +11,16 @@ export const createOriginalScript = async (req, res, next) => {
     }
 }
 
+export const updateOriginalScript = async (req, res) => {
+    try {
+        const originalScriptId = req.params["id"];
+        let result = await scriptMakerService.updateOriginalScript(originalScriptId, req.body);
+        res.json(result);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 export const generateScript = async (req, res, next) => {
     const scriptDetails = req.body 
     if(scriptDetails.system == 'Contratos'){
@@ -58,6 +68,12 @@ const generatePatrimonioScript = async (scriptDetails) => {
             break;
     }
 }
+
+const excluirAlteracaoContratual = async (originalScript, scriptDetails) => {
+    const {contId} = scriptDetails;
+    const script = originalScript[0].script;
+    let generatedScript = '';
+};
 
 const excluirImportacao = async (originalScript, scriptDetails) => {
     const {registroEntradaId} = scriptDetails,
